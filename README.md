@@ -2,6 +2,7 @@ Overview
 
 Hey, I've designed a network demonstrating high availability and maximum security. This setup is for MegaCorp, which is located in the US East region. 
 
+![vpc (6)](https://github.com/user-attachments/assets/31ff143b-06f8-4350-a121-a8d9954ab469)
 
 
  
@@ -22,16 +23,12 @@ Name: Megacorp
 
 IPv4 CIDR Block: 10.0.0.0/16 
 
- 
+ ![image](https://github.com/user-attachments/assets/197c76ea-8c98-4da9-88b6-157603445b6d)
+
 
 Click Create VPC. 
 
  
-
- 
-
- 
-
 Why This Step? 
 
 A Virtual Private Cloud (VPC) is an isolated network within AWS where you can deploy resources securely. 
@@ -73,6 +70,8 @@ VPC: Select megacoprp
 Availability Zone: us-east-1f 
 
 IPv4 CIDR Block: 10.0.1.0/24 
+<img width="493" alt="2024-12-11 13_04_24-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/1e92688e-684b-4192-a272-a47f7e2d5ca8" />
+
 
 Click Create Subnet. 
 
@@ -106,7 +105,6 @@ Availability Zone: us-east-1b
 
 IPv4 CIDR Block: 10.0.2.0/24 
 
- 
 
  
 
@@ -153,6 +151,7 @@ IPv4 CIDR Block: 10.0.3.0/24
  
 
  
+<img width="488" alt="2024-12-11 20_16_19-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/9b06e59d-611e-406b-aacb-20d527cfb786" />
 
  
 
@@ -203,6 +202,7 @@ Enables public-facing resources (like web servers) to serve client requests over
 Essential for creating a fully functional public subnet. 
 
  
+<img width="960" alt="2024-12-11 22_23_08-" src="https://github.com/user-attachments/assets/9c4ba375-939e-4ace-af9c-0e8f68fde2f4" />
 
 Step 4: Create a Route Table for Public Subnets 
 
@@ -224,7 +224,9 @@ Destination: 0.0.0.0/0
 
 Target: MyIGW (Internet Gateway) 
 
- 
+ <img width="608" alt="2024-12-11 22_23_31-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/49958691-5959-4d19-a478-4994e83daef3" />
+
+<img width="960" alt="2024-12-11 22_27_02-" src="https://github.com/user-attachments/assets/e99d67d7-3782-4d47-9d02-9f39647a4f32" />
 
  
 
@@ -246,7 +248,8 @@ Ensures web servers and public resources can communicate with the internet.
 
 Provides clarity and control over network traffic. 
 
- 
+ <img width="605" alt="2024-12-11 22_31_34-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/250659f6-24bc-4b88-9539-9b273afaf0f4" />
+
 
 Step 5: Associate Public Subnets with the Public Route Table 
 
@@ -262,13 +265,20 @@ DB_Server
 
 Click Save. 
 
- 
+<img width="950" alt="2024-12-11 22_33_55-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/d38f1f08-7887-4dcf-8ede-de0fd55c3d36" />
+
+
+ <img width="950" alt="2024-12-11 22_33_55-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/488d7cdd-05ab-4570-ae11-d8535ab2255d" />
+
+
+<img width="960" alt="2024-12-11 22_34_58-Greenshot" src="https://github.com/user-attachments/assets/93be8db1-0e64-44cf-9121-edd4ac9d9eaa" />
 
  
 
  
 
- 
+ <img width="960" alt="2024-12-11 22_35_15-" src="https://github.com/user-attachments/assets/e5c55d43-ff3a-4e06-b0fa-fe26ce4c30dc" />
+
 
  
 
@@ -290,7 +300,8 @@ Since the private subnet (Private_DB_Server) does not need direct internet acces
 
 Create a NAT Gateway in the public subnet. 
 
- 
+ <img width="580" alt="2024-12-11 22_52_59-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/12c15fc3-c7a4-479d-8909-494b3b47a03e" />
+
 
  
 
@@ -305,8 +316,11 @@ Create a NAT Gateway in the public subnet.
 Add a route in the private subnet’s route table to direct outbound traffic to the NAT Gateway. 
 
  
+<img width="657" alt="2024-12-11 22_46_49-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/2fae2933-c4b0-4870-815e-7aee21e21d34" />
 
- 
+ <img width="959" alt="2024-12-11 22_53_37-" src="https://github.com/user-attachments/assets/e454209a-f1c8-440b-b892-1e5365c0eeff" />
+<img width="954" alt="2024-12-11 23_03_49-VPC _ us-east-1 - Brave" src="https://github.com/user-attachments/assets/bb0a5e60-d4ec-49a5-adff-e11b4660ae88" />
+
 
  
 
